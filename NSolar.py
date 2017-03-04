@@ -28,7 +28,7 @@ def solarAltitude(latitude, declinations, hour):
 # input latitude, declinations
 # =DEGREES(ACOS( (SIN(RADIANS($D9)) * SIN(RADIANS($B$2)) - SIN(RADIANS($C9)) ) / (COS(RADIANS($D9)) * COS(RADIANS($B$2)) ) ))
 def solarAzimuth(resultLatitude, resultDeclination, resultSolarAltitude): # Solar AzimuthΦ φ (Phi)
-    return (math.degrees(math.asin( (math.sin(math.radians(resultSolarAltitude)) * math.sin(math.radians(resultLatitude)) - math.sin(math.radians(resultDeclination)) ) / (math.cos(math.radians(resultSolarAltitude)) * math.cos(math.radians(resultLatitude)) ) )))
+    return (math.degrees(math.acos( (math.sin(math.radians(resultSolarAltitude)) * math.sin(math.radians(resultLatitude)) - math.sin(math.radians(resultDeclination)) ) / (math.cos(math.radians(resultSolarAltitude)) * math.cos(math.radians(resultLatitude)) ) )))
 
 # input SurfaceAzimuth, solarAzimuth
 # =ABS($B$4+E9)
